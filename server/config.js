@@ -1,2 +1,0 @@
-export const KEY = "e4ef49333ac3db2965ac90f556a4f059";
-export const ATLAS_URI="mongodb+srv://FFFacundo:KeB9eOHFwxAfQRsk@nodemongodb.ddabm1w.mongodb.net/?retryWrites=true&w=majority&appName=nodeMongoDB";
