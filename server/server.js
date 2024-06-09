@@ -16,6 +16,7 @@ mongoose.connect(ATLAS_URI)
 
 const searchSchema = new mongoose.Schema({
   city: String,
+  country: String,
   date: Date,
   weather: Object,
 },{collection: 'Historial'});
@@ -23,9 +24,9 @@ const searchSchema = new mongoose.Schema({
 const Search = mongoose.model('Search', searchSchema);
 
 app.post('/sh', async (req, res) => {
-  const { city, date, weather } = req.body;
+  const { city, country, date, weather } = req.body;
 
-  const newSearch = new Search({ city, date, weather });
+  const newSearch = new Search({ city, country,date, weather });
 
   try {
     await newSearch.save();

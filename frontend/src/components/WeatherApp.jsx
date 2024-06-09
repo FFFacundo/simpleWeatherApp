@@ -14,6 +14,7 @@ const WeatherApp = () => {
       const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}&units=metric`);
       setWeather(response.data);
       saveSearch(city, response.data);
+      console.log(response.data)
     } catch (error) {
       console.error("Error fetching weather data", error);
     }
@@ -23,6 +24,7 @@ const WeatherApp = () => {
     try {
       await axios.post('http://localhost:5000/sh', {
         city,
+        country: weatherData.sys.country,
         date: new Date(),
         weather: weatherData,
       });
@@ -32,12 +34,12 @@ const WeatherApp = () => {
   };
 
   return (
-    <div className={`mx-auto max-w-screen-lg mt-4 py-5 px-32 bg-gradient-to-br 
-    shadow-xl shadow-gray-400 from-green-400 to-green-700 flex`}>
+    <div className={`mx-auto max-w-screen-xl mt-5 py-10 px-32 bg-gradient-to-br 
+    shadow-xl shadow-gray-400 from-green-400 to-green-700 flex `}>
         <div className=''>
-            <h1 className="text-4xl font-bold mb-8">Consulta tu clima</h1>
+            <h1 className="mr-5 text-4xl font-bold mb-8">Consulta tu clima</h1>
         </div>
-        <div className='my-1'>
+        <div className='my-1 '>
             <WeatherForm onSearch={fetchWeather} />
             <WeatherDisplayer weather={weather} />
         </div>

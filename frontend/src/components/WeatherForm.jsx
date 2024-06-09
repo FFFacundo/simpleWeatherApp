@@ -11,6 +11,7 @@ const WeatherForm = ({ onSearch }) => {
       onSearch(city);
       setCity('');
     }
+
   };
 
   return (
@@ -21,7 +22,7 @@ const WeatherForm = ({ onSearch }) => {
         value={city}
         onChange={(e) => setCity(e.target.value)}
         placeholder="Enter city"
-        className=" px-4 py-2 border rounded-md"
+        className=" px-4 py-2 border rounded-lg focus:outline-none "
         />
         <BiSearch onClick={handleSubmit} size={30}
         className="mx-3 cursor-pointer transition ease-out hover:scale-125"/>
