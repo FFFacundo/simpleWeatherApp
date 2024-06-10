@@ -1,4 +1,3 @@
-// src/components/WeatherForm.jsx
 import { useState } from 'react';
 import {BiSearch} from 'react-icons/bi'
 
@@ -21,7 +20,7 @@ const WeatherForm = ({ onSearch }) => {
         type="text"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        placeholder="Enter city"
+        placeholder="Ingrese una ciudad"
         className=" px-4 py-2 border rounded-lg focus:outline-none "
         />
         <BiSearch onClick={handleSubmit} size={30}
